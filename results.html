@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruitment Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .results h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Candidate Details</h1>
+    <div id="results" class="results">
+        <h2>Details</h2>
+        <p><strong>Surname:</strong> <span id="resultSurname"></span></p>
+        <p><strong>Other Names:</strong> <span id="resultOtherNames"></span></p>
+        <p><strong>National ID Number:</strong> <span id="resultNationalId"></span></p>
+        <p><strong>Date Of Birth:</strong> <span id="resultDob"></span></p>
+        <p><strong>Gender:</strong> <span id="resultGender"></span></p>
+        <p><strong>Height:</strong> <span id="resultHeight"></span></p>
+        <p><strong>Weight:</strong> <span id="resultWeight"></span></p>
+        <p><strong>Number Of Teeth:</strong> <span id="resultTeeth"></span></p>
+        <p><strong>Status Of Feet:</strong> <span id="resultFeetStatus"></span></p>
+        <p><strong>General Body Status:</strong> <span id="resultBodyStatus"></span></p>
+        <p><strong>Highest Academic Qualification:</strong> <span id="resultQualification"></span></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const formData = JSON.parse(localStorage.getItem('formData'));
+            document.getElementById('resultSurname').textContent = "woijoiewjc";
+            if (formData) {
+                document.getElementById('resultSurname').textContent = formData.surname;
+                document.getElementById('resultOtherNames').textContent = formData.otherNames;
+                document.getElementById('resultNationalId').textContent = formData.nationalId;
+                document.getElementById('resultDob').textContent = formData.dob;
+                document.getElementById('resultGender').textContent = formData.gender;
+                document.getElementById('resultHeight').textContent = formData.height + " cm";
+                document.getElementById('resultWeight').textContent = formData.weight + " kg";
+                document.getElementById('resultTeeth').textContent = formData.teeth;
+                document.getElementById('resultFeetStatus').textContent = formData.feetStatus;
+                document.getElementById('resultBodyStatus').textContent = formData.bodyStatus;
+                document.getElementById('resultQualification').textContent = formData.qualification;
+            } else {
+                // alert("No data found. Please fill the form first.");
+                // window.location.href = 'index.html';  // Redirects to the form page if no data is found
+            }
+        });
+    </script>
+</body>
+</html>
